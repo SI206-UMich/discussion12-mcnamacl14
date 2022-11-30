@@ -16,7 +16,7 @@ def setUpDatabase(db_name):
 # TASK 1
 # CREATE TABLE FOR EMPLOYEE INFORMATION IN DATABASE AND ADD INFORMATION
 def create_employee_table(cur, conn):
-    cur.execute('CREATE TABLE IF NOT EXISTS employees( employee_id integer PRIMARY KEY, first_name text NOT NULL, last_name text, job_id integer, hire_date text, salary integer)')
+    cur.execute('CREATE TABLE IF NOT EXISTS Employees (employee_id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT, job_id INTEGER, hire_date DATE, salary NUMBER)')
     conn.commit()
 
 # ADD EMPLOYEE'S INFORMTION TO THE TABLE
@@ -34,8 +34,7 @@ def add_employee(filename, cur, conn):
 
 # TASK 2: GET JOB AND HIRE_DATE INFORMATION
 def job_and_hire_date(cur, conn):
-    cur.execute('SELECT ______ FROM ')
-    
+    cur.execute('SELECT hire_date Jobs.job_title FROM Employees JOIN ____ ON Employees.job_id = bikeshare_stations.station_id')
     pass
 
 # TASK 3: IDENTIFY PROBLEMATIC SALARY DATA
