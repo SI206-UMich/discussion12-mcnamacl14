@@ -28,17 +28,21 @@ def add_employee(filename, cur, conn):
     file_data = f.read()
     f.close()
     # THE REST IS UP TO YOU
+    cur.execute()
+    conn.commit()
     pass
 
 # TASK 2: GET JOB AND HIRE_DATE INFORMATION
 def job_and_hire_date(cur, conn):
+    cur.execute('SELECT ______ FROM ')
+    
     pass
 
 # TASK 3: IDENTIFY PROBLEMATIC SALARY DATA
 # Apply JOIN clause to match individual employees
 def problematic_salary(cur, conn):
     
-    cur.execute('SELECT _____ FROM ______ JOIN _______ ON ')
+    cur.execute('SELECT _____ FROM ______ JOIN _______ ON database.varibale , database.variable')
     conn.commit()
     pass
 
