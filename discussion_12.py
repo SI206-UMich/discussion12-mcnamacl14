@@ -36,9 +36,8 @@ def add_employee(filename, cur, conn):
         hire_date = item['hire_date']
         job_id = item['job_id']
         salary = item['salary']
+        cur.execute('INSERT INTO Employees (employee_id, first_name, last_name, job_id, hire_date, salary) values (?,?,?,?,?)', (emp_id, f_name, l_name, job_id, hire_date, salary))
 
-
-    cur.execute()
     conn.commit()
     pass
 
