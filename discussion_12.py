@@ -36,15 +36,14 @@ def add_employee(filename, cur, conn):
         hire_date = item['hire_date']
         job_id = item['job_id']
         salary = item['salary']
-        cur.execute('INSERT INTO Employees (employee_id, first_name, last_name, job_id, hire_date, salary) values (?,?,?,?,?)', (emp_id, f_name, l_name, job_id, hire_date, salary))
-
+        cur.execute('INSERT OR IGNORE INTO Employees (employee_id, first_name, last_name, job_id, hire_date, salary) values (?,?,?,?,?, ?)', (emp_id, f_name, l_name, job_id, hire_date, salary))
     conn.commit()
-    pass
 
 # TASK 2: GET JOB AND HIRE_DATE INFORMATION
 def job_and_hire_date(cur, conn):
-    cur.execute('SELECT hire_date Jobs.job_title FROM Employees JOIN ____ ON Employees.job_id = bikeshare_stations.station_id')
-    pass
+    cur.execute('SELECT Employees.hire_date, Jobs.job_title FROM Jobs JOIN Employees ON Employees.job_id = Jobs.job_id order by employees.hire_date limit 1')
+    x = cur.fetchone()
+    return x[0]
 
 # TASK 3: IDENTIFY PROBLEMATIC SALARY DATA
 # Apply JOIN clause to match individual employees
