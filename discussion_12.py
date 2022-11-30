@@ -36,6 +36,8 @@ def job_and_hire_date(cur, conn):
 # TASK 3: IDENTIFY PROBLEMATIC SALARY DATA
 # Apply JOIN clause to match individual employees
 def problematic_salary(cur, conn):
+    
+    'SELECT _____ FROM ______ JOIN _______ ON '
     pass
 
 # TASK 4: VISUALIZATION
