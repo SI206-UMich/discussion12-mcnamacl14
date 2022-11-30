@@ -28,6 +28,16 @@ def add_employee(filename, cur, conn):
     file_data = f.read()
     f.close()
     # THE REST IS UP TO YOU
+    data = json.loads(file_data)
+    for item in data:
+        emp_id = item['employee_id']
+        f_name= item['first_name']
+        l_name = item['last_name']
+        hire_date = item['hire_date']
+        job_id = item['job_id']
+        salary = item['salary']
+
+
     cur.execute()
     conn.commit()
     pass
