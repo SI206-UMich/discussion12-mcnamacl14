@@ -49,13 +49,24 @@ def job_and_hire_date(cur, conn):
 # Apply JOIN clause to match individual employees
 def problematic_salary(cur, conn):
     
-    cur.execute('SELECT _____ FROM ______ JOIN _______ ON database.varibale , database.variable')
-    conn.commit()
-    pass
+    cur.execute('SELECT Employees.job_id, Jobs.job_id FROM Jobs JOIN Employees ON Jobs.job_id = Employees.job_id WHERE salary < jobs.min_salary OR salary > jobs.max_salary')
+    x = cur.fetchall()
+    return x
 
 # TASK 4: VISUALIZATION
 def visualization_salary_data(cur, conn):
-    pass
+    plt.xlabel("Job Title")
+    plt.ylabel("Salary")
+    cur.execute('SELECT Jobs.job_title, FROM Jobs JOIN Employees ON Jobs.job_id = Employees.job_id') 
+    result = cur.fetchall 
+    x,y = zip(*result)
+    plt.scatter(x, y)
+    cur.execute('SELECT min max FROM Jobs JOIN Employees ON Jobs.job_id = Employees.job_id') 
+    result = cur.fetchall 
+    x,y = zip(*result)
+    plt.scatter(x, y)
+
+
 
 class TestDiscussion12(unittest.TestCase):
     def setUp(self) -> None:
