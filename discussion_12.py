@@ -16,7 +16,8 @@ def setUpDatabase(db_name):
 # TASK 1
 # CREATE TABLE FOR EMPLOYEE INFORMATION IN DATABASE AND ADD INFORMATION
 def create_employee_table(cur, conn):
-    'CREATE TABLE IF NOT EXISTS employees( employee_id integer PRIMARY KEY, first_name text NOT NULL, last_name text, job_id integer, hire_date text, salary integer)'
+    cur.execute('CREATE TABLE IF NOT EXISTS employees( employee_id integer PRIMARY KEY, first_name text NOT NULL, last_name text, job_id integer, hire_date text, salary integer)')
+    conn.commit()
 
 # ADD EMPLOYEE'S INFORMTION TO THE TABLE
 
@@ -37,7 +38,8 @@ def job_and_hire_date(cur, conn):
 # Apply JOIN clause to match individual employees
 def problematic_salary(cur, conn):
     
-    'SELECT _____ FROM ______ JOIN _______ ON '
+    cur.execute('SELECT _____ FROM ______ JOIN _______ ON ')
+    conn.commit()
     pass
 
 # TASK 4: VISUALIZATION
